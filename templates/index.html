@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision Forge</title>
+  <link rel="shortcut icon" href="/Favicon/tf.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <h1><i class="fa-solid fa-video"></i> Vision Forge</h1>
+
+  <div class="button-group" role="group" aria-label="Filter Buttons">
+    <button onclick="setEffect('normal')" id="btn-normal" class="active">Normal</button>
+    <button onclick="setEffect('grayscale')" id="btn-grayscale">Grayscale</button>
+    <button onclick="setEffect('canny')" id="btn-canny">Canny Edge</button>
+    <button onclick="setEffect('invert')" id="btn-invert">Invert</button>
+    <button onclick="setEffect('blur')" id="btn-blur">Blur</button>
+    <button onclick="setEffect('thermal')" id="btn-thermal">Thermal Cam</button>
+    <button onclick="setEffect('face')" id="btn-face">Face Detect</button>
+    <button onclick="setEffect('face_overlay')" id="btn-face_overlay">Face Overlay</button>
+    
+  </div>
+
+  <!-- Intensity slider container -->
+  <div id="intensity-container">
+    <div id="intensity-label">Intensity: <span id="intensity-value">5</span></div>
+    <input type="range" id="intensity-slider" min="1" max="10" value="5" />
+  </div>
+
+  <div style="position: relative; max-width: 680px; margin: 0 auto;">
+    <img id="video" src="/video_feed" alt="Live Video Stream" />
+    <canvas id="canvas" width="640" height="480"></canvas>
+  </div>
+
+  <div class="button-group" role="group" aria-label="Capture and Download Buttons">
+    <button onclick="capture()"><i class="fa-solid fa-camera-retro"></i> Capture</button>
+    <button onclick="downloadImage()"><i class="fa-solid fa-download"></i> Download</button>
+
+    <!-- Split View Toggle -->
+    <label class="switch" title="Toggle Split View">
+      <input type="checkbox" id="splitToggle" />
+      <span class="slider"></span>
+    </label>
+    <span class="switch-text">Split View</span>
+  </div>
+  
+  <script src="/static/scripts.js"></script>
+</body>
+</html>

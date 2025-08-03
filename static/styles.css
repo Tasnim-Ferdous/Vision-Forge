@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #0d0d0d;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 15px;
+  margin: 5px 0;
+  overflow-x: hidden;
+}
+h1 {
+  color: #00ffc3;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+#video {
+  border: 3px solid #00ffc3;
+  border-radius: 12px;
+  margin-top: 15px;
+  max-width: 100%;
+  height: auto;
+  background: black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button-group {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+button, label.switch {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #00ffc3;
+  color: #0d0d0d;
+  transition: 0.2s ease;
+  min-width: 110px;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+button:hover, label.switch:hover {
+  background-color: #00d8aa;
+}
+.active {
+  background-color: #007f61;
+  color: white;
+}
+#canvas {
+  display: none;
+}
+#intensity-container {
+  margin: 10px auto;
+  max-width: 300px;
+  display: none;
+  color: #00ffc3;
+  text-align: center;
+}
+#intensity-label {
+  margin-bottom: 5px;
+}
+#intensity-slider {
+  width: 100%;
+}
+
+/* Toggle Switch */
+label.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 28px;
+  padding: 0;
+  background-color: #00ffc3;
+  border-radius: 28px;
+  cursor: pointer;
+  user-select: none;
+  min-width: unset;
+}
+label.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+label.switch .slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: #0d0d0d;
+  border-radius: 28px;
+  transition: 0.4s;
+}
+label.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: #00ffc3;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+label.switch input:checked + .slider {
+  background-color: #007f61;
+}
+label.switch input:checked + .slider:before {
+  transform: translateX(32px);
+  background-color: white;
+}
+label.switch-text {
+  color: #00ffc3;
+  font-weight: 600;
+  margin-left: 12px;
+  user-select: none;
+  font-size: 14px;
+}
